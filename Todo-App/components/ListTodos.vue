@@ -3,7 +3,7 @@
     <transition-group name="list-complete" mode="out-in" tag="div">
       <div
         v-for="(todo, index) in todos"
-        :key="todo.id"
+        :key="index"
         class="flex items-center justify-between p-4 mt-4 bg-white rounded shadow-lg list-complete-item"
         :class="{ 'bg-green-300': todo.done }"
       >
@@ -28,6 +28,8 @@
           >
             UnComplete
           </button>
+
+          <p class="p-4">{{ todo.id.toLocaleDateString() }}</p>
         </div>
       </div>
     </transition-group>

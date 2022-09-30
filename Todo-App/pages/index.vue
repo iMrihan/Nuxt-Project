@@ -34,15 +34,9 @@ export default Vue.extend({
   },
   computed: {
     todos() {
+      console.log(this.$store.state.todos)
+
       return this.$store.state.todos
-    },
-  },
-  methods: {
-    toggleDone(index: number) {
-      this.$store.commit('toggleDone', index)
-    },
-    deleteTodo(index: number) {
-      this.$store.commit('deleteTodo', index)
     },
   },
 })
