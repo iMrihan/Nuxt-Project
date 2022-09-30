@@ -20,18 +20,6 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  head() {
-    return {
-      title: 'Vue TODO - Home',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Vue TODO application with Nuxt and Typescript',
-        },
-      ],
-    }
-  },
   computed: {
     todos() {
       console.log(this.$store.state.todos)
