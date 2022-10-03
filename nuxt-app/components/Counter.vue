@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-const count = ref(0);
+const count = shallowRef(0);
 
 function increment() {
   count.value++;

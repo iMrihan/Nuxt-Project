@@ -1,9 +1,9 @@
 <template>
-  <div>Hello About</div>
+  <h2>Welcome Rihan Khan</h2>
 </template>
 
 <script>
 definePageMeta({
-  layout: false,
+  layout: "sidebar",
 });
 </script>
