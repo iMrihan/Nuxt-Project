@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="bg-gray-500">
     <article>
       <p>Dashboard</p>
       <p>Settings</p>

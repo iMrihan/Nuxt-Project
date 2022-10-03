@@ -1,9 +1,9 @@
 <template>
   <NuxtLayout>
     <div>
-      <button @click="Toggle">Toggle</button>
+      <!-- <button @click="Toggle">Toggle</button> -->
       <NuxtPage />
-      <component :is="MyComponent" />
+      <!-- <component :is="MyComponent" /> -->
     </div>
   </NuxtLayout>
 </template>
