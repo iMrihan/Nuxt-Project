@@ -4,22 +4,55 @@
       <header>
         <div class="container mx-auto">
           <div class="flex items-center">
-            <router-link to="/" class="router-link">Home</router-link>
+            <nuxt-link to="/" class="router-link">Home</nuxt-link>
+
+            <div v-if="!token">
+              <nuxt-link v-if="!token" to="/login" class="router-link"
+                >Login</nuxt-link
+              >
+              <nuxt-link v-if="!token" to="/signup" class="router-link"
+                >Sign Up</nuxt-link
+              >
+            </div>
+
+            <div v-else>
+              <a @click="logout">Logout</a>
+            </div>
           </div>
         </div>
       </header>
     </nav>
+
     <router-view />
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 
 export default Vue.extend({
-  watch: {
-    $route(to) {
-      document.title = to.meta.title || 'Your Website'
+  data() {
+    return {
+      token: null,
+    }
+  },
+  mounted() {
+    if (localStorage.getItem('loginData')) {
+      try {
+        this.token = JSON.parse(localStorage.getItem('loginData'))
+      } catch (e) {
+        localStorage.removeItem('cats')
+      }
+    }
+  },
+
+  methods: {
+    logout() {
+      if (this.token) {
+        localStorage.clear()
+        this.$router.push('/login')
+        window.location.reload(true)
+      }
     },
   },
 })

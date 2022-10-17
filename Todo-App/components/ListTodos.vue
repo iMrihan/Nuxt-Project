@@ -40,7 +40,6 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'ListTodos',
   props: {
     todos: { type: Array, default: null },
     name: { type: String, default: '' },

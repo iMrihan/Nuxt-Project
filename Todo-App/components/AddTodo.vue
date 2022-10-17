@@ -23,7 +23,6 @@ import Vue from 'vue'
 import 'vue2-animate/dist/vue2-animate.min.css'
 
 export default Vue.extend({
-  name: 'AddTodo',
   data() {
     const todoText: string = ''
     return { todoText }
